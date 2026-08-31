@@ -1,318 +1,857 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curriculum Vitae - Indra Febri Suseno</title>
-
+    <title>Portofolio Pelajar SMK</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f2f2f2;
-            color: #222;
-            line-height: 1.5;
-        }
-
-        .cv-container {
-            width: 800px;
-            max-width: 95%;
-            margin: 30px auto;
-            background: white;
-            padding: 40px 50px;
-            border: 1px solid #222;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        /* HEADER */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-
-        .header h1 {
-            font-size: 32px;
-            font-weight: 800;
-            letter-spacing: 1px;
-        }
-
-        .profile-photo {
-            width: 140px;
-            height: 175px;
-            object-fit: cover;
-            border: 1px solid #222;
-        }
-
-        /* SECTION */
-        .section {
-            margin-top: 20px;
-        }
-
-        .section-title {
-            font-size: 22px;
-            font-weight: bold;
-            text-decoration: underline;
-            margin-bottom: 7px;
-            text-transform: uppercase;
-        }
-
-        .line {
-            height: 2px;
-            background: #222;
-            margin-bottom: 12px;
-        }
-
-        /* DATA */
-        .data {
-            display: grid;
-            grid-template-columns: 150px 15px 1fr;
-            font-size: 15px;
-            margin-bottom: 4px;
-        }
-
-        .label {
-            font-weight: normal;
-        }
-
-        .colon {
-            text-align: center;
-        }
-
-        /* EDUCATION */
-        .education {
-            display: grid;
-            grid-template-columns: 150px 15px 1fr;
-            font-size: 15px;
-            margin-bottom: 5px;
-        }
-
-        /* SKILLS */
-        .skills {
-            display: grid;
-            grid-template-columns: 150px 15px 1fr;
-            font-size: 15px;
-            margin-bottom: 5px;
-        }
-
-        /* EXPERIENCE */
-        .experience {
-            font-size: 15px;
-        }
-
-        /* FOOTER */
-        .footer {
-            margin-top: 40px;
-            text-align: center;
-            font-size: 12px;
-            color: #777;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 600px) {
-            .cv-container {
-                padding: 25px;
-                margin: 10px auto;
-            }
-
-            .header {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .header h1 {
-                font-size: 26px;
-            }
-
-            .profile-photo {
-                width: 120px;
-                height: 150px;
-            }
-
-            .data,
-            .education,
-            .skills {
-                grid-template-columns: 110px 10px 1fr;
-                font-size: 13px;
-            }
-
-            .section-title {
-                font-size: 18px;
-            }
-        }
-
         @media print {
-            body {
-                background: white;
-            }
-
-            .cv-container {
-                width: 100%;
-                max-width: 100%;
-                margin: 0;
-                box-shadow: none;
-            }
+            .no-print { display: none !important; }
+            body { background: white !important; color: black !important; }
+            .print-shadow-none { box-shadow: none !important; border: 1px solid #e5e7eb !important; }
         }
     </style>
 </head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 min-h-screen font-sans transition-colors duration-200">
 
-<body>
+    <!-- TOP NAVIGATION BAR (NO-PRINT) -->
+    <header class="no-print sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand / Status -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white font-bold shadow-md shadow-blue-500/20">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 dark:text-white text-base">Portofolio SMK</span>
+                        <span id="jurusanBadgeNav" class="ml-2 text-xs px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 font-medium">RPL</span>
+                    </div>
+                </div>
 
-    <div class="cv-container">
+                <!-- Desktop Nav Buttons -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <!-- Preset Selector -->
+                    <select id="presetSelector" onchange="loadPreset(this.value)" class="text-xs bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg px-3 py-2 font-medium text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="rpl">⚡ Preset: Rekayasa Perangkat Lunak (RPL)</option>
+                        <option value="dkv">🎨 Preset: Desain Komunikasi Visual (DKV)</option>
+                        <option value="tkj">🌐 Preset: Teknik Komputer & Jaringan (TKJ)</option>
+                        <option value="tkr">🔧 Preset: Teknik Kendaraan Ringan (TKR)</option>
+                        <option value="akl">📊 Preset: Akuntansi & Keuangan (AKL)</option>
+                    </select>
 
-        <!-- HEADER -->
-        <div class="header">
-            <h1>CURRICULUM VITAE</h1>
+                    <button onclick="toggleEditorModal()" class="inline-flex items-center space-x-2 text-xs font-semibold px-3.5 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition shadow-sm">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <span>Edit Data</span>
+                    </button>
 
-            <!-- Ganti foto-cv.jpg dengan foto pribadi -->
-            <img src="foto-cv.jpg"
-                 alt="Foto Profil"
-                 class="profile-photo">
+                    <button onclick="window.print()" class="inline-flex items-center space-x-1.5 text-xs font-medium px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                        <i class="fa-solid fa-print"></i>
+                        <span>Cetak / PDF</span>
+                    </button>
+
+                    <button onclick="toggleDarkMode()" class="p-2 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                        <i id="themeIcon" class="fa-solid fa-moon text-base"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Action Toggle -->
+                <div class="flex items-center space-x-2 md:hidden">
+                    <button onclick="toggleDarkMode()" class="p-2 text-slate-500 dark:text-slate-400">
+                        <i id="themeIconMobile" class="fa-solid fa-moon"></i>
+                    </button>
+                    <button onclick="toggleEditorModal()" class="p-2 bg-blue-600 text-white rounded-lg text-xs font-medium">
+                        <i class="fa-solid fa-pen-to-square mr-1"></i> Edit
+                    </button>
+                </div>
+            </div>
         </div>
+    </header>
 
+    <!-- MAIN PORTFOLIO DISPLAY CONTENT -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
 
-        <!-- DATA PRIBADI -->
-        <section class="section">
-            <h2 class="section-title">Data Pribadi</h2>
-            <div class="line"></div>
+        <!-- HERO / PROFILE SECTION -->
+        <section class="bg-white dark:bg-slate-800/80 rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 dark:border-slate-700/60 relative overflow-hidden transition-colors">
+            <div class="absolute -top-24 -right-24 w-72 h-72 bg-blue-500/10 dark:bg-blue-500/20 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 relative z-10">
+                <!-- Avatar / Photo -->
+                <div class="relative group">
+                    <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-2xl bg-gradient-to-tr from-blue-600 to-cyan-400 p-1 shadow-md">
+                        <img id="displayFoto" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Foto Profil" class="w-full h-full object-cover rounded-xl bg-slate-100">
+                    </div>
+                    <span class="absolute bottom-1 right-1 w-5 h-5 bg-emerald-500 border-2 border-white dark:border-slate-800 rounded-full" title="Siap Kerja / Magang"></span>
+                </div>
 
-            <div class="data">
-                <span class="label">Nama</span>
-                <span class="colon">:</span>
-                <span>Indra Febri Suseno</span>
-            </div>
+                <!-- Info -->
+                <div class="flex-1 text-center md:text-left space-y-3">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300 text-xs font-semibold">
+                        <i class="fa-solid fa-school"></i>
+                        <span id="displaySekolah">SMK Negeri 1 Kota Moderen</span>
+                    </div>
 
-            <div class="data">
-                <span class="label">Tempat, Tanggal Lahir</span>
-                <span class="colon">:</span>
-                <span>Air Batu, 09 Februari 1991</span>
-            </div>
+                    <h1 id="displayNama" class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                        Ahmad Rizky Pratama
+                    </h1>
+                    
+                    <p class="text-base font-semibold text-blue-600 dark:text-blue-400 flex items-center justify-center md:justify-start gap-2">
+                        <i class="fa-solid fa-code"></i>
+                        <span id="displayJurusan">Siswa Kelas XII — Rekayasa Perangkat Lunak</span>
+                    </p>
 
-            <div class="data">
-                <span class="label">Jenis Kelamin</span>
-                <span class="colon">:</span>
-                <span>Laki-Laki</span>
-            </div>
+                    <p id="displayTentang" class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
+                        Siswa SMK kelas XII RPL yang berdedikasi tinggi dan antusias dalam bidang Web Development & UI/UX Design. Pengalaman PKL selama 4 bulan di PT Tech Solusindo dengan fokus pada pembuatan modul web frontend dan maintenance database.
+                    </p>
 
-            <div class="data">
-                <span class="label">Agama</span>
-                <span class="colon">:</span>
-                <span>Islam</span>
-            </div>
+                    <!-- Contact Details Badges -->
+                    <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-2 sm:gap-3 text-xs text-slate-600 dark:text-slate-300">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700/60">
+                            <i class="fa-solid fa-envelope text-blue-500"></i>
+                            <span id="displayEmail">ahmad.rizky@email.com</span>
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700/60">
+                            <i class="fa-brands fa-whatsapp text-emerald-500"></i>
+                            <span id="displayTelepon">+62 812-3456-7890</span>
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700/60">
+                            <i class="fa-solid fa-location-dot text-rose-500"></i>
+                            <span id="displayKota">Bandung, Jawa Barat</span>
+                        </span>
+                    </div>
 
-            <div class="data">
-                <span class="label">Tinggi Badan</span>
-                <span class="colon">:</span>
-                <span>170 Cm</span>
-            </div>
-
-            <div class="data">
-                <span class="label">Berat Badan</span>
-                <span class="colon">:</span>
-                <span>60 Kg</span>
-            </div>
-
-            <div class="data">
-                <span class="label">Alamat</span>
-                <span class="colon">:</span>
-                <span>Jalan Rawang Timur Iv B/4, Kel. Rawang Timur, Kec. Padang Selatan</span>
-            </div>
-
-            <div class="data">
-                <span class="label">Handphone</span>
-                <span class="colon">:</span>
-                <span>085263839596</span>
-            </div>
-
-            <div class="data">
-                <span class="label">Status</span>
-                <span class="colon">:</span>
-                <span>Belum Menikah</span>
-            </div>
-
-            <div class="data">
-                <span class="label">E-Mail</span>
-                <span class="colon">:</span>
-                <span>indrafebrisuseno@yahoo.com</span>
-            </div>
-        </section>
-
-
-        <!-- DATA PENDIDIKAN -->
-        <section class="section">
-            <h2 class="section-title">Data Pendidikan</h2>
-            <div class="line"></div>
-
-            <div class="education">
-                <span>Sekolah Dasar</span>
-                <span>:</span>
-                <span>SDN 17 Pasar Sungai Tunu (1997 - 2003)</span>
-            </div>
-
-            <div class="education">
-                <span>SMP</span>
-                <span>:</span>
-                <span>SMPN 1 Balai Selasa (2003 - 2006)</span>
-            </div>
-
-            <div class="education">
-                <span>SMA</span>
-                <span>:</span>
-                <span>SMAN 1 Balai Selasa (2006 - 2009)</span>
-            </div>
-
-            <div class="education">
-                <span>Perguruan Tinggi</span>
-                <span>:</span>
-                <span>
-                    UNIVERSITAS PUTRA INDONESIA "YPTK" Padang
-                    (2009 - 2013)
-                </span>
+                    <!-- External Links -->
+                    <div id="displayLinks" class="pt-2 flex justify-center md:justify-start gap-3">
+                        <a id="linkGithub" href="#" target="_blank" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-700 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 flex items-center justify-center text-slate-700 dark:text-slate-200 transition">
+                            <i class="fa-brands fa-github text-base"></i>
+                        </a>
+                        <a id="linkLinkedin" href="#" target="_blank" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-700 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 flex items-center justify-center text-slate-700 dark:text-slate-200 transition">
+                            <i class="fa-brands fa-linkedin-in text-base"></i>
+                        </a>
+                        <a id="linkPortfolio" href="#" target="_blank" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-700 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 flex items-center justify-center text-slate-700 dark:text-slate-200 transition">
+                            <i class="fa-solid fa-globe text-base"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
-
-        <!-- KEMAMPUAN -->
-        <section class="section">
-            <h2 class="section-title">Kemampuan</h2>
-            <div class="line"></div>
-
-            <div class="skills">
-                <span>Informasi Teknologi</span>
-                <span>:</span>
-                <span>Bisa Office, Myob, Visual Basic dan Online</span>
+        <!-- KEAHLIAN / SKILLS SECTION -->
+        <section class="space-y-4">
+            <div class="flex items-center space-x-2">
+                <div class="w-2 h-6 bg-blue-600 rounded-full"></div>
+                <h2 class="text-xl font-bold text-slate-900 dark:text-white">Keahlian & Kompetensi</h2>
             </div>
 
-            <div class="skills">
-                <span>Bahasa</span>
-                <span>:</span>
-                <span>Bahasa Indonesia (Aktif), English (Pasif)</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                <!-- Hard Skills Card -->
+                <div class="bg-white dark:bg-slate-800/80 rounded-xl p-5 shadow-sm border border-slate-200 dark:border-slate-700/60">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-400 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-gears text-blue-500"></i> Hard Skills (Teknis)
+                    </h3>
+                    <div id="displayHardSkills" class="flex flex-wrap gap-2">
+                        <!-- Filled by JS -->
+                    </div>
+                </div>
+
+                <!-- Soft Skills & Tools Card -->
+                <div class="bg-white dark:bg-slate-800/80 rounded-xl p-5 shadow-sm border border-slate-200 dark:border-slate-700/60 space-y-4">
+                    <div>
+                        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-400 mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-brain text-emerald-500"></i> Soft Skills
+                        </h3>
+                        <div id="displaySoftSkills" class="flex flex-wrap gap-2">
+                            <!-- Filled by JS -->
+                        </div>
+                    </div>
+
+                    <div class="pt-2 border-t border-slate-100 dark:border-slate-700/60">
+                        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-400 mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-laptop-code text-indigo-500"></i> Software & Tools
+                        </h3>
+                        <div id="displayTools" class="flex flex-wrap gap-2">
+                            <!-- Filled by JS -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
+        <!-- PENGALAMAN PKL / MAGANG -->
+        <section class="space-y-4">
+            <div class="flex items-center space-x-2">
+                <div class="w-2 h-6 bg-blue-600 rounded-full"></div>
+                <h2 class="text-xl font-bold text-slate-900 dark:text-white">Pengalaman PKL / Magang Industri</h2>
+            </div>
 
-        <!-- PENGALAMAN -->
-        <section class="section">
-            <h2 class="section-title">Pengalaman</h2>
-            <div class="line"></div>
-
-            <div class="experience">
-                Fresh Graduate
+            <div class="bg-white dark:bg-slate-800/80 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-700/60">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                    <div>
+                        <h3 id="displayPklPosisi" class="text-lg font-bold text-slate-900 dark:text-white">Staf Magang Frontend Developer</h3>
+                        <p id="displayPklPerusahaan" class="text-sm font-semibold text-blue-600 dark:text-blue-400">PT Tech Solusindo — Bandung</p>
+                    </div>
+                    <span id="displayPklPeriode" class="inline-flex items-center text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 w-fit">
+                        Januari 2025 – April 2025
+                    </span>
+                </div>
+                
+                <ul id="displayPklTugas" class="space-y-2 text-sm text-slate-600 dark:text-slate-300 list-disc list-inside">
+                    <!-- Filled by JS -->
+                </ul>
             </div>
         </section>
 
+        <!-- PROYEK UNGGULAN -->
+        <section class="space-y-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="w-2 h-6 bg-blue-600 rounded-full"></div>
+                    <h2 class="text-xl font-bold text-slate-900 dark:text-white">Proyek Unggulan</h2>
+                </div>
+            </div>
 
-        <div class="footer">
-            Curriculum Vitae
+            <div id="displayProyekList" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Project cards loaded via JS -->
+            </div>
+        </section>
+
+        <!-- PENDIDIKAN, SERTIFIKASI & PRESTASI -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Pendidikan & Sertifikasi -->
+            <div class="space-y-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-2 h-6 bg-blue-600 rounded-full"></div>
+                    <h2 class="text-xl font-bold text-slate-900 dark:text-white">Pendidikan & Sertifikat</h2>
+                </div>
+
+                <div class="bg-white dark:bg-slate-800/80 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-700/60 space-y-4">
+                    <!-- Edu -->
+                    <div class="border-l-2 border-blue-500 pl-4 space-y-1">
+                        <span class="text-xs font-semibold text-blue-600 dark:text-blue-400">2022 — Sekarang</span>
+                        <h3 id="displayNamaSekolahFull" class="text-base font-bold text-slate-900 dark:text-white">SMK Negeri 1 Kota Moderen</h3>
+                        <p id="displayJurusanFull" class="text-xs text-slate-500 dark:text-slate-400">Jurusan Rekayasa Perangkat Lunak</p>
+                    </div>
+
+                    <!-- Sertifikat -->
+                    <div class="pt-4 border-t border-slate-100 dark:border-slate-700/60">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Sertifikasi & Pelatihan</h4>
+                        <ul id="displaySertifikatList" class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+                            <!-- Filled by JS -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prestasi & Organisasi -->
+            <div class="space-y-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-2 h-6 bg-blue-600 rounded-full"></div>
+                    <h2 class="text-xl font-bold text-slate-900 dark:text-white">Prestasi & Organisasi</h2>
+                </div>
+
+                <div class="bg-white dark:bg-slate-800/80 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-700/60 space-y-4">
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Pencapaian & Lomba</h4>
+                        <ul id="displayPrestasiList" class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+                            <!-- Filled by JS -->
+                        </ul>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-100 dark:border-slate-700/60">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Pengalaman Organisasi</h4>
+                        <ul id="displayOrganisasiList" class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+                            <!-- Filled by JS -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER (NO-PRINT) -->
+        <footer class="no-print border-t border-slate-200 dark:border-slate-800 pt-8 text-center text-xs text-slate-500 dark:text-slate-400">
+            <p>© 2026 Portofolio Pelajar SMK. Dibuat dengan HTML, Tailwind CSS & JavaScript.</p>
+        </footer>
+    </main>
+
+    <!-- EDIT MODAL / DRAWER (NO-PRINT) -->
+    <div id="editorModal" class="no-print fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex justify-end hidden opacity-0 transition-opacity duration-300">
+        <div class="w-full max-w-2xl bg-white dark:bg-slate-900 h-full overflow-y-auto p-6 shadow-2xl space-y-6">
+            
+            <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4">
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-sliders text-blue-600 text-lg"></i>
+                    <h2 class="text-lg font-bold text-slate-900 dark:text-white">Edit Data Portofolio</h2>
+                </div>
+                <button onclick="toggleEditorModal()" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-lg p-2">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Form Fields -->
+            <form id="portfolioForm" onsubmit="event.preventDefault(); updateFromForm();" class="space-y-6">
+
+                <!-- Profile Data -->
+                <div class="space-y-4">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">1. Data Diri & Header</h3>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Nama Lengkap</label>
+                            <input type="text" id="inputNama" class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Nama Sekolah</label>
+                            <input type="text" id="inputSekolah" class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Jurusan / Kelas</label>
+                        <input type="text" id="inputJurusan" class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Deskripsi Singkat (Tentang Saya)</label>
+                        <textarea id="inputTentang" rows="3" class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg"></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Email</label>
+                            <input type="email" id="inputEmail" class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">No. HP / WA</label>
+                            <input type="text" id="inputTelepon" class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Kota</label>
+                            <input type="text" id="inputKota" class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">URL Foto Profil (Image Link)</label>
+                        <input type="text" id="inputFoto" class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="space-y-4 pt-4 border-t border-slate-200 dark:border-slate-800">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">2. Keahlian & Tools (Pisahkan dengan Koma)</h3>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Hard Skills</label>
+                        <input type="text" id="inputHardSkills" placeholder="HTML, CSS, PHP, MySQL" class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Soft Skills</label>
+                        <input type="text" id="inputSoftSkills" placeholder="Kerjasama Tim, Manajemen Waktu" class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Software & Tools</label>
+                        <input type="text" id="inputTools" placeholder="VS Code, Figma, Git" class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Pengalaman PKL -->
+                <div class="space-y-4 pt-4 border-t border-slate-200 dark:border-slate-800">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">3. Pengalaman PKL</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Posisi PKL</label>
+                            <input type="text" id="inputPklPosisi" class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Nama Perusahaan & Kota</label>
+                            <input type="text" id="inputPklPerusahaan" class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Periode PKL</label>
+                        <input type="text" id="inputPklPeriode" class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Tugas & Tanggung Jawab (1 per baris)</label>
+                        <textarea id="inputPklTugas" rows="3" class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg"></textarea>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-end space-x-3 pt-4 border-t border-slate-200 dark:border-slate-800">
+                    <button type="button" onclick="toggleEditorModal()" class="px-4 py-2 text-xs font-semibold rounded-lg border border-slate-300 dark:border-slate-700">
+                        Batal
+                    </button>
+                    <button type="submit" class="px-5 py-2 text-xs font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700">
+                        Simpan & Tampilkan
+                    </button>
+                </div>
+            </form>
         </div>
-
     </div>
 
+    <!-- JAVASCRIPT STATE & LOGIC -->
+    <script>
+        // Preset Data per Jurusan
+        const presets = {
+            rpl: {
+                nama: "Ahmad Rizky Pratama",
+                sekolah: "SMK Negeri 1 Kota Moderen",
+                jurusan: "Siswa Kelas XII — Rekayasa Perangkat Lunak (RPL)",
+                badge: "RPL",
+                tentang: "Siswa SMK kelas XII RPL yang berdedikasi tinggi dan antusias dalam bidang Web Development & UI/UX Design. Pengalaman PKL selama 4 bulan di PT Tech Solusindo dengan fokus pada pembuatan modul web frontend dan maintenance database.",
+                email: "ahmad.rizky@email.com",
+                telepon: "+62 812-3456-7890",
+                kota: "Bandung, Jawa Barat",
+                foto: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+                hardSkills: ["HTML5 / CSS3", "JavaScript (ES6)", "PHP & MySQL", "Tailwind CSS", "REST API Basic"],
+                softSkills: ["Kerjasama Tim", "Problem Solving", "Komunikasi Teknis", "Manajemen Waktu"],
+                tools: ["VS Code", "Figma", "Git / GitHub", "XAMPP", "Postman"],
+                pklPosisi: "Staf Magang Junior Web Developer",
+                pklPerusahaan: "PT Tech Solusindo — Bandung",
+                pklPeriode: "Januari 2025 – April 2025",
+                pklTugas: [
+                    "Mengembangkan tampilan responsif untuk 3 modul halaman dashboard klien.",
+                    "Melakukan testing dan perbaikan bug tampilan di berbagai ukuran browser.",
+                    "Membantu restrukturisasi tabel database MySQL untuk efisiensi query."
+                ],
+                proyek: [
+                    {
+                        judul: "Sistem Informasi Perpustakaan Sekolah",
+                        kategori: "Web Application",
+                        peran: "Fullstack Developer",
+                        waktu: "Februari 2025",
+                        deskripsi: "Aplikasi pengelola peminjaman dan pengembalian buku perpustakaan berbasis web dengan fitur cetak kartu dan laporan otomatis.",
+                        tools: "PHP, MySQL, Tailwind CSS",
+                        hasil: "Digunakan secara langsung oleh petugas perpustakaan sekolah.",
+                        gambar: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=600&q=80"
+                    },
+                    {
+                        judul: "Landing Page UMKM Produk Olahan",
+                        kategori: "Front-End Web",
+                        peran: "UI Designer & Developer",
+                        waktu: "November 2024",
+                        deskripsi: "Website katalog produk interaktif untuk UMKM lokal lengkap dengan tombol langsung terintegrasi ke WhatsApp Order.",
+                        tools: "HTML, CSS, JavaScript",
+                        hasil: "Meningkatkan pemesanan online mitra UMKM hingga 25%.",
+                        gambar: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80"
+                    }
+                ],
+                sertifikat: [
+                    "Sertifikasi BNSP Pemrogram Web Junior (2025)",
+                    "Dicoding: Memulai Pemrograman Dengan Python (2024)",
+                    "Juara 2 LKS Web Technologies Tingrat Kota (2024)"
+                ],
+                prestasi: [
+                    "Juara 2 Lomba Kompetensi Siswa (LKS) Web Tech 2024",
+                    "Peserta Terbaik Program Magang PT Tech Solusindo"
+                ],
+                organisasi: [
+                    "Ketua Ekstrakurikuler IT Club SMK (2024–2025)",
+                    "Anggota Divisi Humas OSIS (2023–2024)"
+                ]
+            },
+            dkv: {
+                nama: "Nabila Putri Kirana",
+                sekolah: "SMK Negeri 2 Seni & Desain",
+                jurusan: "Siswa Kelas XII — Desain Komunikasi Visual (DKV)",
+                badge: "DKV",
+                tentang: "Kreatif dan penuh ide segar dalam perancangan identitas visual, ilustrasi digital, serta desain media sosial. Berpengalaman menangani brief klien nyata selama masa PKL di Agensi Creative Hub.",
+                email: "nabila.kirana@email.com",
+                telepon: "+62 821-9876-5432",
+                kota: "Surabaya, Jawa Timur",
+                foto: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
+                hardSkills: ["Branding & Logo Design", "Social Media Graphics", "Layout & Tipografi", "Vector Illustration", "Basic Photo Editing"],
+                softSkills: ["Kreativitas Tinggi", "Riset Visual", "Terbuka Kritik", "Manajemen Deadline"],
+                tools: ["Adobe Photoshop", "Adobe Illustrator", "Figma", "Canva Pro", "Procreate"],
+                pklPosisi: "Junior Graphic Designer Intern",
+                pklPerusahaan: "Kreatif Media Studio — Surabaya",
+                pklPeriode: "Januari 2025 – April 2025",
+                pklTugas: [
+                    "Membuat 30+ aset konten feeder Instagram bulanan untuk 4 klien UMKM.",
+                    "Merancang desain banner promosi cetak dan baligo acara pameran lokal.",
+                    "Menyiapkan berkas Siap Cetak (Final Artwork / FA) dengan standar produksi."
+                ],
+                proyek: [
+                    {
+                        judul: "Redesain Brand Identity Kopi Lokal",
+                        kategori: "Branding & Package",
+                        peran: "Lead Designer",
+                        waktu: "Maret 2025",
+                        deskripsi: "Perancangan ulang logo, kemasan produk standing pouch, serta guideline warna brand untuk usaha kedai kopi lokal.",
+                        tools: "Adobe Illustrator & Photoshop",
+                        hasil: "Logo baru resmi dipakai di 3 cabang kedai kopi.",
+                        gambar: "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=600&q=80"
+                    },
+                    {
+                        judul: "Ilustrasi Poster Kampanye Lingkungan",
+                        kategori: "Digital Illustration",
+                        peran: "Illustrator",
+                        waktu: "Desember 2024",
+                        deskripsi: "Seri poster edukasi pengolahan sampah plastik untuk kampanye dinas lingkungan hidup daerah.",
+                        tools: "Procreate & Photoshop",
+                        hasil: "Dipublikasikan di majalah sekolah dan papan informasi digital kota.",
+                        gambar: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80"
+                    }
+                ],
+                sertifikat: [
+                    "Sertifikasi Kompetensi Keahlian DKV - BNSP (2025)",
+                    "Adobe Certified Professional - Graphic Design (2024)"
+                ],
+                prestasi: [
+                    "Juara 1 Lomba Desain Poster Poster Fest Jawa Timur 2024"
+                ],
+                organisasi: [
+                    "Ketua Majalah Dinding & Jurnalistik Sekolah (2024)"
+                ]
+            },
+            tkj: {
+                nama: "Bagas Setiawan",
+                sekolah: "SMK Teknologi Nusantara",
+                jurusan: "Siswa Kelas XII — Teknik Komputer & Jaringan (TKJ)",
+                badge: "TKJ",
+                tentang: "Terampil dalam instalasi infrastruktur jaringan LAN/WLAN, konfigurasi MikroTik router, serta troubleshooting perangkat keras & sistem operasi server.",
+                email: "bagas.net@email.com",
+                telepon: "+62 857-1122-3344",
+                kota: "Semarang, Jawa Tengah",
+                foto: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+                hardSkills: ["Routing & Switching (MikroTik)", "Instalasi Jaringan Kabel LAN & Fiber Optic", "Konfigurasi Debian Linux Server", "Network Security Basic", "Troubleshooting Hardware"],
+                softSkills: ["Kedisiplinan", "Analisis Masalah", "Kerja Lapangan", "Komunikasi Tim"],
+                tools: ["Winbox", "Cisco Packet Tracer", "Cisco CLI", "Putty", "Wireshark"],
+                pklPosisi: "Staf Magang IT Support & Network Tech",
+                pklPerusahaan: "PT Solusi Jaringan Terpadu — Semarang",
+                pklPeriode: "Januari 2025 – April 2025",
+                pklTugas: [
+                    "Membantu pemasangan dan crimping kabel UTP Cat6 di 15 ruangan kantor.",
+                    "Melakukan setting Bandwidth Management dan Hotspot MikroTik untuk karyawan.",
+                    "Melakukan perbaikan dan maintenance berkala pada 25 unit komputer kerja."
+                ],
+                proyek: [
+                    {
+                        judul: "Perancangan Jaringan Hotspot Sekolah Berbasis MikroTik",
+                        kategori: "Network Infrastructure",
+                        peran: "Network Administrator",
+                        waktu: "Januari 2025",
+                        deskripsi: "Implementasi sistem captive portal login voucher untuk 500+ pengguna aktif dengan pembagian kecepatan yang adil.",
+                        tools: "MikroTik RB951, Winbox, Cisco",
+                        hasil: "Koneksi internet sekolah lebih stabil tanpa kemacetan bandwidth.",
+                        gambar: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80"
+                    }
+                ],
+                sertifikat: [
+                    "MTCNA (MikroTik Certified Network Associate) (2024)",
+                    "Cisco Networking Essentials Certificate (2024)"
+                ],
+                prestasi: [
+                    "Juara 3 LKS IT Network System Administration Kab. Semarang (2024)"
+                ],
+                organisasi: [
+                    "Koordinator Lab Komputer Sekolah (2024–2025)"
+                ]
+            },
+            tkr: {
+                nama: "Dimas Anggara",
+                sekolah: "SMK Otomotif Mandiri",
+                jurusan: "Siswa Kelas XII — Teknik Kendaraan Ringan (TKR)",
+                badge: "TKR",
+                tentang: "Memiliki pemahaman mendalam tentang perawatan berkala mesin bensin/diesel EFI, perbaikan sistem rem, transmisi, serta diagnosa kelistrikan otomotif modern.",
+                email: "dimas.oto@email.com",
+                telepon: "+62 813-9988-7766",
+                kota: "Bekasi, Jawa Barat",
+                foto: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+                hardSkills: ["Tune-Up Mesin EFI", "Diagnosa ECU Scanner", "Overhaul Sistem Rem & Kemudi", "Perawatan Kelistrikan Mobil", "Pengukuran Caliper & Micrometer"],
+                softSkills: ["SOP Keselamatan Kerja (K3)", "Ketelitian Tinggi", "Ketahanan Fisik", "Tanggung Jawab"],
+                tools: ["OBD2 Scanner", "Multitester Digital", "Kunci Momen", "Hydraulic Lift", "Compressor"],
+                pklPosisi: "Asisten Mekanik Servis Berkala",
+                pklPerusahaan: "Bengkel Resmi Astra Auto Service — Bekasi",
+                pklPeriode: "Januari 2025 – April 2025",
+                pklTugas: [
+                    "Melaksanakan servis berkala (10.000 KM) pada 100+ unit mobil konsumen.",
+                    "Pemeriksaan dan penggantian oli, filter, busi, serta pembersihan rem.",
+                    "Menggunakan OBD2 Diagnostic Scanner untuk mendeteksi error kode DTC pada mesin."
+                ],
+                proyek: [
+                    {
+                        judul: "Overhaul & Restoration Mesin Toyota 7K-E",
+                        kategori: "Automotive Engine Repair",
+                        peran: "Ketua Tim Mekanik",
+                        waktu: "Februari 2025",
+                        deskripsi: "Pembongkaran total, pembersihan komponen internal, pengukuran celah katup, dan perakitan ulang hingga mesin berjalan normal.",
+                        tools: "Dial Indicator, Kunci Torsi, Scanner",
+                        hasil: "Mesin dapat dihidupkan dengan kompresi dan suara yang presisi.",
+                        gambar: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=600&q=80"
+                    }
+                ],
+                sertifikat: [
+                    "Uji Kompetensi Keahlian Otomotif - Predikat Sangat Memuaskan (2025)",
+                    "Sertifikat Pelatihan K3 Industri Otomotif (2024)"
+                ],
+                prestasi: [
+                    "Finalis Kontes Mekanik Muda Otomotif Jawa Barat (2024)"
+                ],
+                organisasi: [
+                    "Ketua Bengkel Latih SMK (2024)"
+                ]
+            },
+            akl: {
+                nama: "Siti Rahmawati",
+                sekolah: "SMK Bisnis & Keuangan Utama",
+                jurusan: "Siswa Kelas XII — Akuntansi & Keuangan Lembaga (AKL)",
+                badge: "AKL",
+                tentang: "Detail-oriented dan tekun dalam penyusunan laporan keuangan, verifikasi bukti transaksi, perhitungan perpajakan sederhana, serta pengoperasian aplikasi akuntansi komputer.",
+                email: "siti.rahma@email.com",
+                telepon: "+62 838-7654-3210",
+                kota: "Jakarta Selatan, DKI Jakarta",
+                foto: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+                hardSkills: ["Penyusunan Jurnal & Buku Besar", "Laporan Keuangan (Laba/Rugi, Neraca)", "Pengoperasian MYOB / Accurate", "Perhitungan PPh 21 & PPN", "Rekonsiliasi Bank"],
+                softSkills: ["Ketelitian & Integritas", "Analisis Angka", "Kerapihan Berkas", "Kerjasama Tim"],
+                tools: ["MYOB Accounting", "Accurate Online", "Microsoft Excel Advanced", "Spreadsheet"],
+                pklPosisi: "Staf Magang Admin Keuangan & Pembukuan",
+                pklPerusahaan: "Kantor Akuntan Publik (KAP) Mitra Usaha — Jakarta",
+                pklPeriode: "Januari 2025 – April 2025",
+                pklTugas: [
+                    "Input 500+ faktur penjualan dan bukti kas keluar ke aplikasi Accurate.",
+                    "Melakukan verifikasi kelengkapan dokumen pendukung kuitansi dan nota.",
+                    "Membantu pembuatan draf rekonsiliasi bank bulanan milik klien UMKM."
+                ],
+                proyek: [
+                    {
+                        judul: "Simulasi Pembukuan Keuangan Digital Koperasi Sekolah",
+                        kategori: "Accounting System",
+                        peran: "Staf Akuntan Utama",
+                        waktu: "Januari 2025",
+                        deskripsi: "Digitalisasi pencatatan transaksi manual harian menjadi laporan keuangan terintegrasi berbasis Microsoft Excel VBA.",
+                        tools: "MS Excel, Spreadsheet",
+                        hasil: "Mempercepat waktu penyusunan laporan bulanan dari 5 hari menjadi 1 hari.",
+                        gambar: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+                    }
+                ],
+                sertifikat: [
+                    "Sertifikasi Teknisi Akuntansi Yunior - BNSP (2025)",
+                    "Sertifikat Kelulusan MYOB Accounting Level Advanced (2024)"
+                ],
+                prestasi: [
+                    "Juara 1 Olimpiade Akuntansi Pelajar SMK Se-DKI Jakarta (2024)"
+                ],
+                organisasi: [
+                    "Bendahara Umum OSIS SMK (2023–2024)"
+                ]
+            }
+        };
+
+        // Current Active State
+        let currentData = { ...presets.rpl };
+
+        // Render Current State to UI
+        function renderUI() {
+            document.getElementById('displayNama').innerText = currentData.nama;
+            document.getElementById('displaySekolah').innerText = currentData.sekolah;
+            document.getElementById('displayJurusan').innerText = currentData.jurusan;
+            document.getElementById('jurusanBadgeNav').innerText = currentData.badge;
+            document.getElementById('displayTentang').innerText = currentData.tentang;
+            document.getElementById('displayEmail').innerText = currentData.email;
+            document.getElementById('displayTelepon').innerText = currentData.telepon;
+            document.getElementById('displayKota').innerText = currentData.kota;
+            document.getElementById('displayFoto').src = currentData.foto;
+
+            document.getElementById('displayNamaSekolahFull').innerText = currentData.sekolah;
+            document.getElementById('displayJurusanFull').innerText = currentData.jurusan;
+
+            // Render Badges (Hard Skills)
+            const hardContainer = document.getElementById('displayHardSkills');
+            hardContainer.innerHTML = currentData.hardSkills.map(skill => 
+                `<span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800 rounded-lg text-xs font-semibold">${skill}</span>`
+            ).join('');
+
+            // Render Soft Skills
+            const softContainer = document.getElementById('displaySoftSkills');
+            softContainer.innerHTML = currentData.softSkills.map(skill => 
+                `<span class="px-3 py-1 bg-emerald-50 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 rounded-lg text-xs font-semibold">${skill}</span>`
+            ).join('');
+
+            // Render Tools
+            const toolsContainer = document.getElementById('displayTools');
+            toolsContainer.innerHTML = currentData.tools.map(tool => 
+                `<span class="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-600 rounded-lg text-xs font-semibold">${tool}</span>`
+            ).join('');
+
+            // PKL Info
+            document.getElementById('displayPklPosisi').innerText = currentData.pklPosisi;
+            document.getElementById('displayPklPerusahaan').innerText = currentData.pklPerusahaan;
+            document.getElementById('displayPklPeriode').innerText = currentData.pklPeriode;
+            
+            const pklTugasContainer = document.getElementById('displayPklTugas');
+            pklTugasContainer.innerHTML = currentData.pklTugas.map(tugas => 
+                `<li class="leading-relaxed"><span class="text-slate-700 dark:text-slate-200">${tugas}</span></li>`
+            ).join('');
+
+            // Projects List
+            const proyekContainer = document.getElementById('displayProyekList');
+            proyekContainer.innerHTML = currentData.proyek.map(p => `
+                <div class="bg-white dark:bg-slate-800/80 rounded-xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-700/60 flex flex-col justify-between group hover:shadow-md transition">
+                    <div>
+                        <div class="h-44 w-full bg-slate-100 overflow-hidden relative">
+                            <img src="${p.gambar}" alt="${p.judul}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-3 right-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                                ${p.kategori}
+                            </span>
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <div class="flex items-center justify-between text-xs text-slate-400">
+                                <span><i class="fa-solid fa-user-tag text-blue-500 mr-1"></i> ${p.peran}</span>
+                                <span><i class="fa-regular fa-calendar mr-1"></i> ${p.waktu}</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">${p.judul}</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">${p.deskripsi}</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-2 border-t border-slate-100 dark:border-slate-700/50 space-y-1 text-xs">
+                        <p class="text-slate-500"><strong class="text-slate-700 dark:text-slate-300">Tools:</strong> ${p.tools}</p>
+                        <p class="text-slate-500"><strong class="text-slate-700 dark:text-slate-300">Hasil:</strong> ${p.hasil}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            // Sertifikat List
+            document.getElementById('displaySertifikatList').innerHTML = currentData.sertifikat.map(s => 
+                `<li class="flex items-start space-x-2">
+                    <i class="fa-solid fa-certificate text-amber-500 mt-1"></i>
+                    <span>${s}</span>
+                </li>`
+            ).join('');
+
+            // Prestasi List
+            document.getElementById('displayPrestasiList').innerHTML = currentData.prestasi.map(p => 
+                `<li class="flex items-start space-x-2">
+                    <i class="fa-solid fa-trophy text-yellow-500 mt-1"></i>
+                    <span>${p}</span>
+                </li>`
+            ).join('');
+
+            // Organisasi List
+            document.getElementById('displayOrganisasiList').innerHTML = currentData.organisasi.map(o => 
+                `<li class="flex items-start space-x-2">
+                    <i class="fa-solid fa-users text-blue-500 mt-1"></i>
+                    <span>${o}</span>
+                </li>`
+            ).join('');
+
+            populateFormFields();
+        }
+
+        // Populate Form Fields
+        function populateFormFields() {
+            document.getElementById('inputNama').value = currentData.nama;
+            document.getElementById('inputSekolah').value = currentData.sekolah;
+            document.getElementById('inputJurusan').value = currentData.jurusan;
+            document.getElementById('inputTentang').value = currentData.tentang;
+            document.getElementById('inputEmail').value = currentData.email;
+            document.getElementById('inputTelepon').value = currentData.telepon;
+            document.getElementById('inputKota').value = currentData.kota;
+            document.getElementById('inputFoto').value = currentData.foto;
+
+            document.getElementById('inputHardSkills').value = currentData.hardSkills.join(', ');
+            document.getElementById('inputSoftSkills').value = currentData.softSkills.join(', ');
+            document.getElementById('inputTools').value = currentData.tools.join(', ');
+
+            document.getElementById('inputPklPosisi').value = currentData.pklPosisi;
+            document.getElementById('inputPklPerusahaan').value = currentData.pklPerusahaan;
+            document.getElementById('inputPklPeriode').value = currentData.pklPeriode;
+            document.getElementById('inputPklTugas').value = currentData.pklTugas.join('\n');
+        }
+
+        // Update State From Form Submision
+        function updateFromForm() {
+            currentData.nama = document.getElementById('inputNama').value;
+            currentData.sekolah = document.getElementById('inputSekolah').value;
+            currentData.jurusan = document.getElementById('inputJurusan').value;
+            currentData.tentang = document.getElementById('inputTentang').value;
+            currentData.email = document.getElementById('inputEmail').value;
+            currentData.telepon = document.getElementById('inputTelepon').value;
+            currentData.kota = document.getElementById('inputKota').value;
+            currentData.foto = document.getElementById('inputFoto').value;
+
+            currentData.hardSkills = document.getElementById('inputHardSkills').value.split(',').map(s => s.trim()).filter(Boolean);
+            currentData.softSkills = document.getElementById('inputSoftSkills').value.split(',').map(s => s.trim()).filter(Boolean);
+            currentData.tools = document.getElementById('inputTools').value.split(',').map(s => s.trim()).filter(Boolean);
+
+            currentData.pklPosisi = document.getElementById('inputPklPosisi').value;
+            currentData.pklPerusahaan = document.getElementById('inputPklPerusahaan').value;
+            currentData.pklPeriode = document.getElementById('inputPklPeriode').value;
+            currentData.pklTugas = document.getElementById('inputPklTugas').value.split('\n').map(s => s.trim()).filter(Boolean);
+
+            renderUI();
+            toggleEditorModal();
+        }
+
+        // Load Selected Preset
+        function loadPreset(key) {
+            if (presets[key]) {
+                currentData = JSON.parse(JSON.stringify(presets[key]));
+                renderUI();
+            }
+        }
+
+        // Modal Toggle Logic
+        function toggleEditorModal() {
+            const modal = document.getElementById('editorModal');
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                setTimeout(() => modal.classList.remove('opacity-0'), 10);
+            } else {
+                modal.classList.add('opacity-0');
+                setTimeout(() => modal.classList.add('hidden'), 300);
+            }
+        }
+
+        // Dark Mode Toggle Logic
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const icon = document.getElementById('themeIcon');
+            const iconMobile = document.getElementById('themeIconMobile');
+            
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                icon.className = 'fa-solid fa-moon text-base';
+                iconMobile.className = 'fa-solid fa-moon';
+            } else {
+                html.classList.add('dark');
+                icon.className = 'fa-solid fa-sun text-base text-yellow-400';
+                iconMobile.className = 'fa-solid fa-sun text-yellow-400';
+            }
+        }
+
+        // Initialize on Window Load
+        window.onload = function() {
+            renderUI();
+        }
+    </script>
 </body>
 </html>
